@@ -22,6 +22,7 @@ var secret = config.secret;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var familias = require('./routes/familias');
 
 var app = express();
 
@@ -55,6 +56,8 @@ app.use(function(req, res, next) {
     return res.sendStatus(401);
   }
 });
+
+app.use('/familias', familias);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
